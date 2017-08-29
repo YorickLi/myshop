@@ -1,2 +1,2 @@
 # myshop
-写个项目玩玩
+巩固 Servlet 基础

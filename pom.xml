@@ -11,8 +11,16 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.12</version>
       <scope>test</scope>
+    </dependency>
+
+    <!--javaee-api.jar 依赖,打包时该jar文件不需要打包 -->
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>7.0</version>
+      <scope>provided</scope>
     </dependency>
 
     <!--servlet-api.jar 依赖,打包时该jar文件不需要打包 -->

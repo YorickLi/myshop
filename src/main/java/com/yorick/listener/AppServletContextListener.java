@@ -1,5 +1,7 @@
 package com.yorick.listener;
 
+import com.yorick.utils.Constant;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
@@ -9,8 +11,6 @@ import javax.servlet.ServletContextListener;
  */
 public class AppServletContextListener implements ServletContextListener {
 
-    private final String CONTEXT_PATH_IN_SERVLET_CONTEXT = "context";
-
     /**
      * 项目启动时, 初始化项目的 contextPath 放入 ServletContext 中
      * @param servletContextEvent
@@ -19,9 +19,7 @@ public class AppServletContextListener implements ServletContextListener {
 
         ServletContext servletContext = servletContextEvent.getServletContext();
         String appContextPath = servletContext.getContextPath();
-        servletContext.setAttribute(CONTEXT_PATH_IN_SERVLET_CONTEXT, appContextPath);
-
-        System.out.println(servletContext.getAttribute(CONTEXT_PATH_IN_SERVLET_CONTEXT));
+        servletContext.setAttribute(Constant.CONTEXT_PATH_IN_SERVLET_CONTEXT, appContextPath);
 
     }
 
@@ -32,9 +30,7 @@ public class AppServletContextListener implements ServletContextListener {
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
 
         ServletContext servletContext = servletContextEvent.getServletContext();
-        servletContext.removeAttribute(CONTEXT_PATH_IN_SERVLET_CONTEXT);
-
-        System.out.println(servletContext.getAttribute(CONTEXT_PATH_IN_SERVLET_CONTEXT));
+        servletContext.removeAttribute(Constant.CONTEXT_PATH_IN_SERVLET_CONTEXT);
 
     }
 }
